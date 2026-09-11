@@ -27,7 +27,7 @@ company's behalf, and is not a governed Advisor/Governor actor.
 - `facts.edn` — 11 verified registry facts with per-fact provenance (9 about the
   entity itself, 2 about its directly consolidated subsidiaries). **Generated** —
   see below.
-- `scripts/verify-facts.cljs` — re-fetches every source `facts.edn` cites and fails if
+- `scripts/verify-facts.cljk` — re-fetches every source `facts.edn` cites and fails if
   the live record disagrees. Vendored from `com-junkawasaki/root`
   (`scripts/lei-verify-facts.cljs`); fix issues in the canonical and re-vendor.
 
@@ -38,8 +38,8 @@ them. `facts.edn` now carries them as data, and every value in it was read out o
 a public registry response whose URL and retrieval time sit next to the value:
 
 ```
-nbb scripts/verify-facts.cljs           # check the recorded facts against the live sources
-nbb scripts/verify-facts.cljs --write   # re-fetch and rewrite facts.edn
+nbb scripts/verify-facts.cljk           # check the recorded facts against the live sources
+nbb scripts/verify-facts.cljk --write   # re-fetch and rewrite facts.edn
 ```
 
 Eleven GLEIF/ISO requests back the file (`CHECKED 11` when it was written,
